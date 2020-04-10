@@ -1,0 +1,17 @@
+@proto = http
+@hostname = localhost
+@port = 3000
+@host = {{proto}}://{{hostname}}:{{port}}
+
+GET {{host}} HTTP/2.1
+
+###
+GET {{host}}/404 HTTP/1.1
+
+###
+POST {{host}}/echo HTTP/1.1
+
+content-type: "application/json"
+{
+    "name": "sample",
+}
